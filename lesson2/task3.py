@@ -1,43 +1,51 @@
 class Point:
-    def __init__(self, X, Y, Z):
-        self.X = X
-        self.Y = Y
-        self.Z = Z
+
+    def __init__(self, x, y, z):
+        self.x = x
+        self.y = y
+        self.z = z
 
     def __add__(self, other):
-        X = self.X + other.X
-        Y = self.Y + other.Y
-        Z = self.Z + other.Z
-        return X, Y, Z
+        x = self.x + other.x
+        y = self.y + other.y
+        z = self.z + other.z
+        return Point(x, y, z)
 
     def __sub__(self, other):
-        X = self.X - other.X
-        Y = self.Y - other.Y
-        Z = self.Z - other.Z
-        return X, Y, Z
+        x = self.x - other.x
+        y = self.y - other.y
+        z = self.z - other.z
+        return Point(x, y, z)
 
     def __mul__(self, other):
-        X = self.X * other.X
-        Y = self.Y * other.Y
-        Z = self.Z * other.Z
-        return X, Y, Z
+        x = self.x * other.x
+        y = self.y * other.y
+        z = self.z * other.z
+        return Point(x, y, z)
 
     def __truediv__(self, other):
-        X = self.X / other.X
-        Y = self.Y / other.Y
-        Z = self.Z / other.Z
-        return X, Y, Z
+        x = self.x / other.x
+        y = self.y / other.y
+        z = self.z / other.z
+        return Point(x, y, z)
 
-    def increase_X(self, num):
-        self.X += num
-        return self.X, self.Y, self.Z
+    def increase_x(self, num):
+        self.x += num
+        return Point(self.x, self.y, self.z)
 
 
-point_A = Point(5, 6, 8)
-point_B = Point(2, 3, 5)
+point_a = Point(3, 5, 2)
+point_b = Point(4, 2, 1)
+point_c = Point(2, 4, 5)
 
-print(point_A + point_B)
-print(point_A - point_B)
-print(point_A * point_B)
-print(point_A / point_B)
-print(point_A.increase_X(4))
+result1 = point_a + point_b + point_c
+result2 = point_a - point_b - point_c
+result3 = point_a * point_b * point_c
+result4 = point_a / point_b
+print(result1.x, result1.y, result1.z)
+print(result2.x, result2.y, result2.z)
+print(result3.x, result3.y, result3.z)
+print(result4.x, result4.y, result4.z)
+
+result = point_a.increase_x(2)
+print(result.x, result.y, result.z)
